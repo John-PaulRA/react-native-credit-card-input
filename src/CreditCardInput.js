@@ -117,7 +117,7 @@ export default class CreditCardInput extends Component {
   _inputProps = field => {
     const {
       inputStyle, labelStyle, validColor, invalidColor, placeholderColor,
-      placeholders, labels, values, status,
+      placeholders, labels, values, maxLengths, status,
       onFocus, onChange, onBecomeEmpty, onBecomeValid,
       additionalInputsProps,
     } = this.props;
@@ -131,6 +131,7 @@ export default class CreditCardInput extends Component {
       label: labels[field],
       placeholder: placeholders[field],
       value: values[field],
+      maxLength: maxLengths[field],
       status: status[field],
 
       onFocus, onChange, onBecomeEmpty, onBecomeValid,

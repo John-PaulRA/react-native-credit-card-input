@@ -20,6 +20,7 @@ export default class CCInput extends Component {
     field: PropTypes.string.isRequired,
     label: PropTypes.string,
     value: PropTypes.string,
+    maxLength: PropTypes.number,
     placeholder: PropTypes.string,
     keyboardType: PropTypes.string,
 
@@ -67,7 +68,7 @@ export default class CCInput extends Component {
   _onChange = value => this.props.onChange(this.props.field, value);
 
   render() {
-    const { label, value, placeholder, status, keyboardType,
+    const { label, value, maxLength, placeholder, status, keyboardType,
             containerStyle, inputStyle, labelStyle,
             validColor, invalidColor, placeholderColor,
             additionalInputProps } = this.props;
@@ -92,6 +93,7 @@ export default class CCInput extends Component {
             placeholderTextColor={placeholderColor}
             placeholder={placeholder}
             value={value}
+            maxLength={maxLength}
             onFocus={this._onFocus}
             onChangeText={this._onChange} />
         </View>
