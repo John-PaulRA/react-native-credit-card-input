@@ -26,7 +26,7 @@ export default function connectToState(CreditCardInput) {
       requiresName: PropTypes.bool,
       requiresCVC: PropTypes.bool,
       requiresPostalCode: PropTypes.bool,
-      maxLengths: PropTypes.object.isRequired,
+      maxLengths: PropTypes.object,
       validatePostalCode: PropTypes.func,
     };
 
