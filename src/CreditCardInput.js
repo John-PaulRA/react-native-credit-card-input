@@ -21,10 +21,12 @@ const s = StyleSheet.create({
 		alignItems: "center",
 	},
 	form: {
+    width: '100%',
 		marginTop: 20,
+    paddingLeft: 16,
 	},
 	inputContainer: {
-		marginLeft: 20,
+    marginBottom: 10,
 	},
 	inputLabel: {
 		fontWeight: "bold",
@@ -104,6 +106,7 @@ export default class CreditCardInput extends Component {
 	}
 
 	_focus = field => {
+    return;
 		if (!field) return;
 
 		const scrollResponder = this.refs.Form.getScrollResponder();
@@ -190,7 +193,7 @@ export default class CreditCardInput extends Component {
 					expiry={expiry}
 					cvc={cvc} />
 				<ScrollView ref="Form"
-					horizontal
+					horizontal={false}
 					keyboardShouldPersistTaps="always"
 					scrollEnabled={allowScroll}
 					showsHorizontalScrollIndicator={false}
