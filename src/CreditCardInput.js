@@ -97,7 +97,7 @@ export default class CreditCardInput extends Component {
 		additionalInputsProps: {},
 	};
 
-	componentDidMount = () => this._focus(this.props.focused);
+	componentDidMount = () => this._focusNonDeprecated(this.props.focused);
 
 	componentDidUpdate(prevProps, prevState) {
 		if (prevProps.focused !== this.props.focused) {
@@ -106,7 +106,6 @@ export default class CreditCardInput extends Component {
 	}
 
 	_focus = field => {
-    return;
 		if (!field) return;
 
 		const scrollResponder = this.refs.Form.getScrollResponder();
@@ -193,7 +192,7 @@ export default class CreditCardInput extends Component {
 					expiry={expiry}
 					cvc={cvc} />
 				<ScrollView ref="Form"
-					horizontal={false}
+					horizontal={true}
 					keyboardShouldPersistTaps="always"
 					scrollEnabled={allowScroll}
 					showsHorizontalScrollIndicator={false}
